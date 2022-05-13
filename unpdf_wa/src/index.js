@@ -24,6 +24,7 @@ root.render(
       <Route path="signup" element={<Signup />} />
       <Route path="home" element={<Home />} >
         <Route path="mydocs" element={<MyDocs />} />
+        <Route path="img2pdf" element={<Img2pdf />} />
       </Route>
     </Routes>
   </BrowserRouter>

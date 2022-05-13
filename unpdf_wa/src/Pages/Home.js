@@ -19,7 +19,7 @@ export class Home extends Component {
                 label: 'My docs',
                 icon: 'pi pi-book',
                 command: () => {
-                    window.location.hash = "/mydocs";
+                    this.props.navigate('/home/mydocs');
                 }
             },
             {
@@ -34,7 +34,7 @@ export class Home extends Component {
                 label: 'Img to pdf',
                 icon: 'pi pi-image',
                 command: () => {
-                    window.location.hash = "/img2pdf";
+                    this.props.navigate('/home/img2pdf');
                 }
             },
             {
@@ -43,17 +43,22 @@ export class Home extends Component {
             }
         ];
         this.toHome = this.toHome.bind(this);
+        this.toSignOut = this.toSignOut.bind(this);
     }
 
     toHome = () => {
         this.props.navigate('/home');
     }
 
+    toSignOut = () => {
+        this.props.navigate('/');
+    }
+
     render()  {
         const start = <img src='/unpdf.svg' alt='logo' className='menu-bar-logo' onClick={this.toHome} />
-        const end = <Button label="Sign out" className='m-1'/>
+        const end = <Button label="Sign out" className='m-1' onClick={this.toSignOut}/>
         return(
-            <main style={{ padding: "1rem 0" }}>
+            <main className='p-3'>
                 <ParticlesBg type="circle" bg={true} />
                 <div className='flex flex-column'>
                     <div className='m-3'>
