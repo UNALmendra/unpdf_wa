@@ -1,8 +1,21 @@
-.landinglogo{
+.landing-logo{
   max-width: 300px;
   height: auto;
 }
 
-.fullHeight{
-  height: 100% !important;
+.menu-bar-logo{
+  max-width: 50px;
+  height: auto;
+}
+
+.full-height{
+  min-height: 100vh;
+}
+
+body{
+  min-height: 100vh;
+}
+
+#root{
+  min-height: 100vh;
 }

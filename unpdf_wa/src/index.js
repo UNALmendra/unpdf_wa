@@ -6,6 +6,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
+import Home from './Pages/Home';
+import Img2pdf from './Pages/Img2pdf';
+import MyDocs from './Pages/MyDocs';
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
@@ -19,6 +22,9 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route path="home" element={<Home />} >
+        <Route path="mydocs" element={<MyDocs />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 );

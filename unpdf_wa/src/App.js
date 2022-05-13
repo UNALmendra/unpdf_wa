@@ -10,16 +10,18 @@ export default function App() {
   return (
     <div>
       <ParticlesBg type="circle" bg={true} />
-      <div className='flex justify-content-center fullHeight m-5'>
-        <Card >
-          <div  className='flex justify-content-center'>
-            <img src='/unpdf.svg' className='landinglogo'/>
-          </div>
-          <div className='flex justify-content-center'>
-            <Button label="Log in" className='m-2' onClick={toLogin}/>
-            <Button label="Sign in" className='m-2' onClick={toSignin}/>
-          </div>
-        </Card>
+      <div className='flex flex-row justify-content-center'>
+        <div className='flex align-items-center full-height'>
+          <Card className='flex'>
+            <div  className='flex flex-column justify-content-center'>
+              <img src='/unpdf.svg' alt='logo' className='landing-logo'/>
+              <div className='flex flex-row justify-content-center'>
+                <Button label="Log in" className='m-2' onClick={toLogin}/>
+                <Button label="Sign in" className='m-2' onClick={toSignin}/>
+              </div>
+            </div>
+          </Card>
+        </div>
       </div>
     </div> 
   );
