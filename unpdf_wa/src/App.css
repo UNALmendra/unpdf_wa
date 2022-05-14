@@ -8,6 +8,11 @@
   height: auto;
 }
 
+.big-logo{
+  max-width: 500px;
+  height: auto;
+}
+
 .full-height{
   min-height: 100vh;
 }

@@ -47,7 +47,7 @@ export class Home extends Component {
     }
 
     toHome = () => {
-        this.props.navigate('/home');
+        this.props.navigate('/home/home');
     }
 
     toSignOut = () => {

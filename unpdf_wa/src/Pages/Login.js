@@ -20,7 +20,7 @@ export class Login extends Component {
   
   doLogin = () => {
     console.log(this.state);
-    this.props.navigate('/home');
+    this.props.navigate('/home/home');
   }
 
   render(){
