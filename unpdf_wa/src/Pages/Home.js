@@ -13,7 +13,10 @@ export class Home extends Component {
         this.items = [
             {
                 label: 'My profile',
-                icon: 'pi pi-user'
+                icon: 'pi pi-user',
+                command: () => {
+                    this.props.navigate('/home/profile');
+                }
             },
             {
                 label: 'My docs',
@@ -25,6 +28,13 @@ export class Home extends Component {
             {
                 label: 'Join pdf',
                 icon: 'pi pi-file-pdf'
+            },
+            {
+                label: 'Split pdf',
+                icon: 'pi pi-file-pdf',
+                command: () => {
+                    this.props.navigate('/home/splitpdf');
+                }
             },
             {
                 label: 'Pdf to img',

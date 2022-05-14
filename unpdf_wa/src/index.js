@@ -10,6 +10,8 @@ import Home from './Pages/Home';
 import Img2pdf from './Pages/Img2pdf';
 import MyDocs from './Pages/MyDocs';
 import BigLogo from './Pages/BigLogo';
+import Profile from './Pages/Profile';
+import SplitPdf from './Pages/SplitPdf';
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
@@ -25,7 +27,9 @@ root.render(
       <Route path="signup" element={<Signup />} />
       <Route path="home" element={<Home />} >
         <Route path="home" element={<BigLogo />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="mydocs" element={<MyDocs />} />
+        <Route path="splitpdf" element={<SplitPdf />} />
         <Route path="img2pdf" element={<Img2pdf />} />
       </Route>
     </Routes>
