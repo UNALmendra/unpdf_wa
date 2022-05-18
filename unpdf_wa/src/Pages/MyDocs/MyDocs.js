@@ -1,4 +1,5 @@
 import ReactFileReader from 'react-file-reader';
+import { getDocumentsUser } from './queries/axios';
 
 export default function MyDocs() {
 
@@ -21,5 +22,6 @@ export default function MyDocs() {
         <ReactFileReader base64={true} handleFiles={handleFiles}>
             <button className='btn'>Upload</button>
         </ReactFileReader>
+        <button onClick={getDocumentsUser}>Mostrar documentos del usuario</button>
     </>);
 }

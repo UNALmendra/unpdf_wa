@@ -8,7 +8,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Home from './Pages/Home';
 import Img2pdf from './Pages/Img2pdf';
-import MyDocs from './Pages/MyDocs';
+import MyDocs from './Pages/MyDocs/MyDocs';
 import BigLogo from './Pages/BigLogo';
 import Profile from './Pages/Profile';
 import SplitPdf from './Pages/SplitPdf';
