@@ -14,7 +14,7 @@ export default function App() {
         <div className='flex align-items-center full-height'>
           <Card className='flex'>
             <div  className='flex flex-column justify-content-center'>
-              <img src='/unpdf.svg' alt='logo' className='landing-logo'/>
+              <img src='/unpdf_regular_alt.png' alt='logo' className='landing-logo'/>
               <div className='flex flex-row justify-content-center'>
                 <Button label="Log in" className='m-2' onClick={toLogin}/>
                 <Button label="Sign in" className='m-2' onClick={toSignin}/>

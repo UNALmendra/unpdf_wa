@@ -61,11 +61,12 @@ export class Home extends Component {
     }
 
     toSignOut = () => {
+        localStorage.clear();
         this.props.navigate('/');
     }
 
-    render()  {
-        const start = <img src='/unpdf.svg' alt='logo' className='menu-bar-logo' onClick={this.toHome} />
+    render() {
+        const start = <img src='/unpdf_regular_alt.png' alt='logo' className='menu-bar-logo' onClick={this.toHome} />
         const end = <Button label="Sign out" className='m-1' onClick={this.toSignOut}/>
         return(
             <main className='p-3'>
