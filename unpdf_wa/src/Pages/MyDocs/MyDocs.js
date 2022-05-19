@@ -4,6 +4,8 @@ import { getDocumentsUser, uploadDocuments } from './queries/axios';
 
 export default function MyDocs() {
 
+    const basestorageurl = "https://storage.googleapis.com/unpdf_st/"
+
     const [userDocuments, setUserDocuments] = useState([])
     
     const auxGetDocumentsUser = async () => {
@@ -35,7 +37,7 @@ export default function MyDocs() {
         <button onClick={auxGetDocumentsUser}>Mostrar documentos del usuario</button>
         
         {userDocuments && userDocuments.map(document => {
-            return <tr key={document.storage}><td>{document.name}.{document.type}</td></tr>
+            return <li key={document.storage}><a href={basestorageurl+document.storage} target="_">{document.name}.{document.type}</a></li>
         }
         )}
         
