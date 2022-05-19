@@ -87,7 +87,14 @@ export default function SplitPdf() {
       <div className='pdf-container'>
         {/* show pdf conditionally (if we have one)  */}
         {viewPdf&&<><Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
-          File uploaded
+        <div>
+            <iframe
+                    style={{ width: "100%", height: "500px" }}
+                    src={viewPdf}
+                    type='application/pdf'
+                    title='title'
+                  />
+        </div>
       </Worker></>}
 
       {/* if we dont have pdf or viewPdf state is null */}
