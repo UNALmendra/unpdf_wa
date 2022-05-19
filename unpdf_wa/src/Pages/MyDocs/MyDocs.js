@@ -5,9 +5,9 @@ import { getDocumentsUser, uploadDocuments } from './queries/axios';
 export default function MyDocs() {
 
     const [userDocuments, setUserDocuments] = useState([])
-
+    
     const auxGetDocumentsUser = async () => {
-        var user = "user3"
+        var user = localStorage.getItem("id") 
         var aux = await getDocumentsUser(user)
         setUserDocuments(aux.documents_user)
     }
