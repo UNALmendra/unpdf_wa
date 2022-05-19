@@ -61,6 +61,7 @@ export class Home extends Component {
     }
 
     toSignOut = () => {
+        localStorage.clear();
         this.props.navigate('/');
     }
 
