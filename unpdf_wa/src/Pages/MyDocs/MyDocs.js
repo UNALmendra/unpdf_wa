@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import ReactFileReader from 'react-file-reader';
 import { getDocumentsUser, uploadDocuments } from './queries/axios';
+import './MyDocs.css';
+import { ImageListItem, ImageList } from '@mui/material';
 
 export default function MyDocs() {
 
-    const basestorageurl = "https://storage.googleapis.com/unpdf_st/"
+    const baseStorageUrl = "https://storage.googleapis.com/unpdf_st/"
 
     const [userDocuments, setUserDocuments] = useState([])
-    
+
     const auxGetDocumentsUser = async () => {
-        var user = localStorage.getItem("id") 
+        // var user = localStorage.getItem("id")
+        var user = "Johan"
         var aux = await getDocumentsUser(user)
         setUserDocuments(aux.documents_user)
     }
@@ -20,6 +23,7 @@ export default function MyDocs() {
         var name = full_name.substring(0, full_name.lastIndexOf('.'));
         var type = full_type.substring(full_type.lastIndexOf('/') + 1);
         var user = localStorage.getItem("id")
+
         var base64_data = files["base64"]
         var file = base64_data.substring(base64_data.indexOf(",") + 1)
         uploadDocuments(name, type, user, file);
@@ -35,11 +39,23 @@ export default function MyDocs() {
             <button className='btn'>Upload</button>
         </ReactFileReader>
         <button onClick={auxGetDocumentsUser}>Mostrar documentos del usuario</button>
-        
-        {userDocuments && userDocuments.map(document => {
-            return <li key={document.storage}><a href={basestorageurl+document.storage} target="_">{document.name}.{document.type}</a></li>
-        }
-        )}
-        
+        <br></br>
+        <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+            {userDocuments && userDocuments.map(document => {
+
+                if (document.type === "jpg" || document.type === "jpeg" || document.type === "png")
+                    return (<ImageListItem key={document.storage}>
+
+                        <img
+                            src={baseStorageUrl + document.storage}
+                            alt="test"
+                            loading="lazy" />
+
+                    </ImageListItem>)
+                return <span>No imagen para el documento {document.name + "." + document.type}</span>   
+            }
+            )}
+        </ImageList>
+
     </>);
 }
