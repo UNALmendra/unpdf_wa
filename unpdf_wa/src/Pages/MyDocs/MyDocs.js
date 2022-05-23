@@ -71,22 +71,31 @@ export default function MyDocs() {
                 <Button variant="contained" onClick={auxGetDocumentsUser} disableElevation>Mostrar documentos</Button>
             </Grid>
             <Box width="100%" />
-            <Grid item xs={12} md={6} align="center">
-                <ImageGalleryList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+            <Grid item xs={12} md={6} align="center" justifyContent="center">
+                <ImageGalleryList  cols={3} rowHeight={100}>
                     {userDocuments && userDocuments.map(document => {
                         if (document.type === "jpg" || document.type === "jpeg" || document.type === "png")
-                            return (<ImageListItem key={document.storage}>
-                                <img
-                                    src={baseStorageUrl + document.storage}
-                                    alt={document.name}
-                                    loading="lazy" />
-                            </ImageListItem>)
+                            return (
+                                <Box sx={{ minWidth: 275 }}>
+                                    <Card>
+                                        <CardContent>
+                                            <ImageListItem key={document.storage}>
+                                                <img
+                                                    className='img-document'
+                                                    src={baseStorageUrl + document.storage}
+                                                    alt={document.name}
+                                                    loading="lazy" />
+                                            </ImageListItem>
+                                        </CardContent>
+                                    </Card>
+                                </Box>
+                            )
                         return (<>
                             <Box sx={{ minWidth: 275 }}>
                                 <Card>
                                     <CardContent>
                                         <Typography variant="h5" component="div">
-                                            {document.name+"."+document.type}
+                                            {document.name + "." + document.type}
                                         </Typography>
                                         <Typography variant="body2">
                                             no es una imagen
