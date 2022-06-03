@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  unpdf_wa:
+      image: nginx:1.16-alpine
+      container_name: unpdf_wa
+      volumes:
+        - ./build:/usr/share/nginx/html
+        - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      ports:
+        - 9191:80
+  reverse-proxy:
+      image: valian/docker-nginx-auto-ssl:1.0.0
+      container_name: reverse-proxy
+      restart: on-failure
+      ports:
+        - 80:80
+        - 443:443
+      volumes:
+        - ./.ssl-data:/etc/resty-auto-ssl
+      environment:
+        ALLOWED_DOMAINS: '(app|admin).example.io'
+        SITES: 'app.example.io=unpdf_wa:80'
+        FORCE_HTTPS: "true"
+      depends_on:
+        - unpdf_wa
+volumes:
+  .ssl-data:
