@@ -12,6 +12,8 @@ import MyDocs from './Pages/MyDocs/MyDocs';
 import BigLogo from './Pages/BigLogo';
 import Profile from './Pages/Profile';
 import SplitPdf from './Pages/SplitPdf';
+import SoapConsume from './Pages/SoapConsume';
+
 
 import "primereact/resources/themes/lara-light-indigo/theme.css";  //theme
 import "primereact/resources/primereact.min.css";                  //core css
@@ -31,6 +33,7 @@ root.render(
         <Route path="mydocs" element={<MyDocs />} />
         <Route path="splitpdf" element={<SplitPdf />} />
         <Route path="img2pdf" element={<Img2pdf />} />
+        <Route path="soapConsume" element={<SoapConsume />} />
       </Route>
     </Routes>
   </BrowserRouter>

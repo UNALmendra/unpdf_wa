@@ -26,6 +26,13 @@ export class Home extends Component {
                 }
             },
             {
+                label: 'Soap Consume',
+                icon: 'pi pi-envelope',
+                command: () => {
+                    this.props.navigate('/home/soapConsume');
+                }
+            },
+            {
                 label: 'Join pdf',
                 icon: 'pi pi-file-pdf'
             },
