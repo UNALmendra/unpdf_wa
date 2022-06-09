@@ -2,10 +2,10 @@ const axios_ = require('axios');
 const apiUrl = require('./constants').apiUrl;
 const mutations = require('./constants').mutations;
 
-export const postLogin = async (email, password) => {
+export const postLogIn = async (username, password) => {
   let response = await axios_.post(apiUrl, {
-    query: mutations.postLogin,
-    variables: {email: email, password: password}
+    query: mutations.postLogIn,
+    variables: {username: username, password: password}
   })
   return response
 }

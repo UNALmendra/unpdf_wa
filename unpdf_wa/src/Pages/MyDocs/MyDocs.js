@@ -11,8 +11,8 @@ export default function MyDocs() {
     const [userDocuments, setUserDocuments] = useState([])
 
     const auxGetDocumentsUser = async () => {
-        // var user = localStorage.getItem("id")
-        var user = "Johan"
+        var user = localStorage.getItem("id")
+        //var user = "Johan"
         var aux = await getDocumentsUser(user)
         setUserDocuments(aux.documents_user)
     }
