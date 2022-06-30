@@ -1,5 +1,5 @@
 module.exports = {
-    apiUrl: `http://35.239.72.193/graphql`,
+    apiUrl: `http://104.197.178.60/graphql`,
     mutations: {
         postLogIn:`
         mutation postLogIn($username: String , $password: String){
